@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pwneill.quizing.R;
+import com.pwneill.quizing.model.QuizQuestion;
 import com.pwneill.quizing.view.MusicViewHolder;
 
 import java.util.List;
@@ -17,13 +18,13 @@ import java.util.List;
 public class CardStackAdapter extends RecyclerView.Adapter<MusicViewHolder> {
 
     private Context mContext;
-    private List<String> mMusicNames;
+    private List<QuizQuestion> mMusicQuestions;
     private LayoutInflater mLayoutInflator;
 
-    public CardStackAdapter(Context context, List<String> musicNames) {
+    public CardStackAdapter(Context context, List<QuizQuestion> musicQuestions) {
 
         mContext = context;
-        mMusicNames = musicNames;
+        mMusicQuestions = musicQuestions;
         mLayoutInflator = LayoutInflater.from(context);
 
     }
@@ -40,7 +41,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<MusicViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MusicViewHolder holder, int position) {
 
-        holder.getTxtMusicQuestion().setText(mMusicNames.get(position));
+        holder.getTxtMusicQuestion().setText(mMusicQuestions.get(position).getQuestionText());
 
         holder.getImgBtnTrue().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +65,6 @@ public class CardStackAdapter extends RecyclerView.Adapter<MusicViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mMusicNames.size();
+        return mMusicQuestions.size();
     }
 }
