@@ -46,6 +46,8 @@ public class QuizManager {
             @Override
             public void onResponse(JSONObject response) {
 
+                Log.i("MUSIC", response + "" );
+
                 try {
                     JSONArray results = response.getJSONArray("results");
 

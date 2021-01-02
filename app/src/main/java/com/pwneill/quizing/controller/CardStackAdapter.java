@@ -47,7 +47,16 @@ public class CardStackAdapter extends RecyclerView.Adapter<MusicViewHolder> {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(mContext, "True is tapped", Toast.LENGTH_SHORT).show();
+
+                if (mMusicQuestions.get(position).isTrueFalse()) {
+
+                    Toast.makeText(mContext, "Correct!", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    Toast.makeText(mContext, "Wrong!", Toast.LENGTH_SHORT).show();
+
+                }
 
             }
         });
@@ -56,8 +65,15 @@ public class CardStackAdapter extends RecyclerView.Adapter<MusicViewHolder> {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(mContext, "False is tapped", Toast.LENGTH_SHORT).show();
+                if (!mMusicQuestions.get(position).isTrueFalse()) {
 
+                    Toast.makeText(mContext, "Correct!", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    Toast.makeText(mContext, "Wrong!", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
 
