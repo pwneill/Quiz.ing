@@ -52,6 +52,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<MusicViewHolder> {
 
                     Toast.makeText(mContext, "Correct!", Toast.LENGTH_SHORT).show();
 
+
                 } else {
 
                     Toast.makeText(mContext, "Wrong!", Toast.LENGTH_SHORT).show();

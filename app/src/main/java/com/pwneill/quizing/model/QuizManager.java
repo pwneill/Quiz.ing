@@ -38,7 +38,6 @@ public class QuizManager {
 
     public void getQuizQuestions(Activity activity) {
 
-
         List<QuizQuestion> quizQuestions = new ArrayList<>();
 
         JsonObjectRequest musicJsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url,
@@ -64,7 +63,6 @@ public class QuizManager {
                     CardStackView mCardStackView = activity.findViewById(R.id.mycardstackview);
                     mCardStackView.setLayoutManager(new CardStackLayoutManager(mContext));
                     mCardStackView.setAdapter(new CardStackAdapter(mContext, quizQuestions));
-
 
                 } catch (JSONException e) {
 
